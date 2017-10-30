@@ -30,6 +30,7 @@ public class LocationDataPost {
     LocationDataPost(){
         database = FirebaseDatabase.getInstance();
         rootRef = database.getReference("GPSInformation");
+        database.setPersistenceEnabled(true);
         rootRef.keepSynced(true);
         gson = new Gson();
         retrofit = new Retrofit.Builder()
