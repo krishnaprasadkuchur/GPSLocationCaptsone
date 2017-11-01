@@ -118,6 +118,7 @@ public class LocationFetcherService extends Service {
 
     @Override
     public void onDestroy() {
+        locationDataPost.postToDB(latestLattitude,latestLongitude, username);
         handler.removeCallbacksAndMessages(null);
         Log.w(TAG, "Service STOPPED----------------");
         locationManager.removeUpdates(locationListener);
